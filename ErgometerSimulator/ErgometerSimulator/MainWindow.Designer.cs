@@ -1,6 +1,6 @@
 ﻿namespace ErgometerSimulator
 {
-    partial class Form1
+    partial class MainWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -30,12 +30,12 @@
         {
             this.SuspendLayout();
             // 
-            // Form1
+            // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(370, 253);
-            this.Name = "Form1";
+            this.Name = "MainWindow";
             this.Text = "Ergometer Simulator";
             this.ResumeLayout(false);
 
