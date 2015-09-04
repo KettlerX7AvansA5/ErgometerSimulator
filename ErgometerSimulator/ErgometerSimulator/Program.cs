@@ -15,14 +15,16 @@ namespace ErgometerSimulator
         [STAThread]
         static void Main()
         {
+            Console.WriteLine("Application launching...");
+            StartComportConnection();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainWindow());
-
-            startComportConnection();
+            
         }
 
-        private static void startComportConnection()
+        private static void StartComportConnection()
         {
             SerialPort comPort = new SerialPort();
             comPort.PortName = "COM6";
