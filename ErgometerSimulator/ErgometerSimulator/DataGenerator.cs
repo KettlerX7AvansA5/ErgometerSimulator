@@ -39,7 +39,74 @@ namespace ErgometerSimulator
             //Hearbeat
             if(HeartBeat.random)
             {
-
+                HeartBeat.currentvalue = rand.Next(HeartBeat.value1, HeartBeat.value2);
+            }
+            else
+            {
+                HeartBeat.currentvalue = HeartBeat.value1;
+            }
+            //RPM
+            if (RPM.random)
+            {
+                RPM.currentvalue = rand.Next(RPM.value1, RPM.value2);
+            }
+            else
+            {
+                RPM.currentvalue = RPM.value1;
+            }
+            //Speed
+            if (Speed.random)
+            {
+                Speed.currentvalue = rand.Next(Speed.value1, Speed.value2);
+            }
+            else
+            {
+                Speed.currentvalue = Speed.value1;
+            }
+            //Distance
+            if (Distance.random)
+            {
+                Distance.currentvalue = rand.Next(Distance.value1, Distance.value2);
+            }
+            else
+            {
+                Distance.currentvalue = Distance.value1;
+            }
+            //Power
+            if (Power.random)
+            {
+                Power.currentvalue = rand.Next(Power.value1, Power.value2);
+            }
+            else
+            {
+                Power.currentvalue = Power.value1;
+            }
+            //Energy
+            if (Energy.random)
+            {
+                Energy.currentvalue = rand.Next(Energy.value1, Energy.value2);
+            }
+            else
+            {
+                Energy.currentvalue = Energy.value1;
+            }
+            //ActualPower
+            if (ActualPower.random)
+            {
+                ActualPower.currentvalue = rand.Next(ActualPower.value1, ActualPower.value2);
+            }
+            else
+            {
+                ActualPower.currentvalue = ActualPower.value1;
+            }
+            //Time
+            if (Time.random) // false = up; true = down;
+            {
+                Time.currentvalue = Time.value1 - 1;
+            }
+            else
+            {
+                Time.currentvalue = Time.value1 + 1;
             }
         }
     }

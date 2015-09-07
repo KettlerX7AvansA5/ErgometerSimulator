@@ -96,9 +96,7 @@ namespace ErgometerSimulator
             // ComPortBox
             // 
             this.ComPortBox.FormattingEnabled = true;
-            this.ComPortBox.Items.AddRange(new object[] {
-            "COM8",
-            "COM9"});
+            this.ComPortBox.Items.AddRange(SerialPort.GetPortNames());
             this.ComPortBox.Location = new System.Drawing.Point(15, 308);
             this.ComPortBox.Name = "ComPortBox";
             this.ComPortBox.Size = new System.Drawing.Size(121, 24);
@@ -144,6 +142,7 @@ namespace ErgometerSimulator
             this.setHeartBeat.TabIndex = 6;
             this.setHeartBeat.Text = "Set";
             this.setHeartBeat.UseVisualStyleBackColor = true;
+            this.setHeartBeat.Click += new System.EventHandler(this.setHeartBeat_Click);
             // 
             // setRPM
             // 
@@ -153,6 +152,7 @@ namespace ErgometerSimulator
             this.setRPM.TabIndex = 11;
             this.setRPM.Text = "Set";
             this.setRPM.UseVisualStyleBackColor = true;
+            this.setRPM.Click += new System.EventHandler(this.setRPM_Click);
             // 
             // text2RPM
             // 
@@ -194,6 +194,7 @@ namespace ErgometerSimulator
             this.setSpeed.TabIndex = 16;
             this.setSpeed.Text = "Set";
             this.setSpeed.UseVisualStyleBackColor = true;
+            this.setSpeed.Click += new System.EventHandler(this.setSpeed_Click);
             // 
             // text2Speed
             // 
@@ -235,6 +236,7 @@ namespace ErgometerSimulator
             this.setDistance.TabIndex = 21;
             this.setDistance.Text = "Set";
             this.setDistance.UseVisualStyleBackColor = true;
+            this.setDistance.Click += new System.EventHandler(this.setDistance_Click);
             // 
             // text2Distance
             // 
@@ -276,6 +278,7 @@ namespace ErgometerSimulator
             this.setPower.TabIndex = 26;
             this.setPower.Text = "Set";
             this.setPower.UseVisualStyleBackColor = true;
+            this.setPower.Click += new System.EventHandler(this.setPower_Click);
             // 
             // text2Power
             // 
@@ -317,6 +320,7 @@ namespace ErgometerSimulator
             this.setEnergy.TabIndex = 31;
             this.setEnergy.Text = "Set";
             this.setEnergy.UseVisualStyleBackColor = true;
+            this.setEnergy.Click += new System.EventHandler(this.setEnergy_Click);
             // 
             // text2Energy
             // 
@@ -358,6 +362,7 @@ namespace ErgometerSimulator
             this.setActualPower.TabIndex = 36;
             this.setActualPower.Text = "Set";
             this.setActualPower.UseVisualStyleBackColor = true;
+            this.setActualPower.Click += new System.EventHandler(this.setActualPower_Click);
             // 
             // text2ActualPower
             // 
