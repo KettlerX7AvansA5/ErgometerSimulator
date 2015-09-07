@@ -15,11 +15,13 @@ namespace ErgometerSimulator
     public partial class ErgometerSimulator : Form
     {
         ComPort comPort;
+        DataGenerator dg;
 
         public ErgometerSimulator()
         {
             InitializeComponent();
             comPort = new ComPort(this);
+            dg = new DataGenerator();
         }
 
         private void connectButton_Click(object sender, EventArgs e)
@@ -49,6 +51,11 @@ namespace ErgometerSimulator
             string display = command + " :_: " + response;
             Console.WriteLine(display);
             comPort.Write(response);
+        }
+
+        private void updateTimer_Tick(object sender, EventArgs e)
+        {
+            dg.Update();
         }
     }
 }

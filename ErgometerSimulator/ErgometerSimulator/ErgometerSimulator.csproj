@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="CommandParser.cs" />
     <Compile Include="ComPort.cs" />
+    <Compile Include="DataGenerator.cs" />
     <Compile Include="ErgometerSimulator.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -56,6 +57,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValueSetting.cs" />
     <EmbeddedResource Include="ErgometerSimulator.resx">
       <DependentUpon>ErgometerSimulator.cs</DependentUpon>
     </EmbeddedResource>
