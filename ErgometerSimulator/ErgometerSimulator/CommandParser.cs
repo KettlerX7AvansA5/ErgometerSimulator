@@ -8,9 +8,15 @@ namespace ErgometerSimulator
 {
     class CommandParser
     {
-        private static Random rand = new Random();
+        private Random rand = new Random();
+        private DataGenerator dg;
 
-        public static string Parse(string input)
+        public CommandParser(DataGenerator dg)
+        {
+            this.dg = dg;
+        }
+
+        public string Parse(string input)
         {
             string response = "";
 
@@ -21,14 +27,14 @@ namespace ErgometerSimulator
                     response = "ACK";
                     break;
                 case "ST":
-                    response += rand.Next(90, 140)  + "\t"; //Heartbeat
-                    response += rand.Next(20, 40)   + "\t"; //RPM
-                    response += rand.Next(50, 350)  + "\t"; //Speed
-                    response += rand.Next(10, 999)  + "\t"; //Distance
-                    response += rand.Next(25, 400)  + "\t"; //Power
-                    response += rand.Next(5, 55)    + "\t"; //Energy
-                    response += rand.Next(0, 24)    + ":" + rand.Next(0, 60) + "\t"; //Time
-                    response += rand.Next(25, 400);         //ActualPower
+                    response += dg.HeartBeat.currentvalue  + "\t"; //Heartbeat
+                    response += dg.RPM.currentvalue   + "\t"; //RPM
+                    response += dg.Speed.currentvalue  + "\t"; //Speed
+                    response += dg.Distance.currentvalue + "\t"; //Distance
+                    response += dg.Power.currentvalue  + "\t"; //Power
+                    response += dg.Energy.currentvalue    + "\t"; //Energy
+                    response += (dg.Time.currentvalue/60)   + ":" + (dg.Time.currentvalue%60) + "\t"; //Time
+                    response += dg.ActualPower.currentvalue;         //ActualPower
                     break;
                 default:
                     break;
