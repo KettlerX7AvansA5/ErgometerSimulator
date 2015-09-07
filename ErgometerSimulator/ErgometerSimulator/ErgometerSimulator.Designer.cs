@@ -96,7 +96,9 @@ namespace ErgometerSimulator
             // ComPortBox
             // 
             this.ComPortBox.FormattingEnabled = true;
-            this.ComPortBox.Items.AddRange(SerialPort.GetPortNames());
+            this.ComPortBox.Items.AddRange(new object[] {
+            "COM8",
+            "COM9"});
             this.ComPortBox.Location = new System.Drawing.Point(15, 308);
             this.ComPortBox.Name = "ComPortBox";
             this.ComPortBox.Size = new System.Drawing.Size(121, 24);
@@ -114,14 +116,17 @@ namespace ErgometerSimulator
             // randomHeartBeat
             // 
             this.randomHeartBeat.AutoSize = true;
+            this.randomHeartBeat.Enabled = false;
             this.randomHeartBeat.Location = new System.Drawing.Point(114, 28);
             this.randomHeartBeat.Name = "randomHeartBeat";
             this.randomHeartBeat.Size = new System.Drawing.Size(18, 17);
             this.randomHeartBeat.TabIndex = 3;
             this.randomHeartBeat.UseVisualStyleBackColor = true;
+            this.randomHeartBeat.CheckedChanged += new System.EventHandler(this.randomHeartBeat_CheckedChanged);
             // 
             // text1HeartBeat
             // 
+            this.text1HeartBeat.Enabled = false;
             this.text1HeartBeat.Location = new System.Drawing.Point(151, 24);
             this.text1HeartBeat.Name = "text1HeartBeat";
             this.text1HeartBeat.Size = new System.Drawing.Size(100, 22);
@@ -129,6 +134,7 @@ namespace ErgometerSimulator
             // 
             // text2HeartBeat
             // 
+            this.text2HeartBeat.Enabled = false;
             this.text2HeartBeat.Location = new System.Drawing.Point(257, 24);
             this.text2HeartBeat.Name = "text2HeartBeat";
             this.text2HeartBeat.Size = new System.Drawing.Size(100, 22);
@@ -136,6 +142,7 @@ namespace ErgometerSimulator
             // 
             // setHeartBeat
             // 
+            this.setHeartBeat.Enabled = false;
             this.setHeartBeat.Location = new System.Drawing.Point(363, 24);
             this.setHeartBeat.Name = "setHeartBeat";
             this.setHeartBeat.Size = new System.Drawing.Size(75, 23);
@@ -146,6 +153,7 @@ namespace ErgometerSimulator
             // 
             // setRPM
             // 
+            this.setRPM.Enabled = false;
             this.setRPM.Location = new System.Drawing.Point(363, 50);
             this.setRPM.Name = "setRPM";
             this.setRPM.Size = new System.Drawing.Size(75, 23);
@@ -156,6 +164,7 @@ namespace ErgometerSimulator
             // 
             // text2RPM
             // 
+            this.text2RPM.Enabled = false;
             this.text2RPM.Location = new System.Drawing.Point(257, 50);
             this.text2RPM.Name = "text2RPM";
             this.text2RPM.Size = new System.Drawing.Size(100, 22);
@@ -163,6 +172,7 @@ namespace ErgometerSimulator
             // 
             // text1RPM
             // 
+            this.text1RPM.Enabled = false;
             this.text1RPM.Location = new System.Drawing.Point(151, 50);
             this.text1RPM.Name = "text1RPM";
             this.text1RPM.Size = new System.Drawing.Size(100, 22);
@@ -171,11 +181,13 @@ namespace ErgometerSimulator
             // randomRPM
             // 
             this.randomRPM.AutoSize = true;
+            this.randomRPM.Enabled = false;
             this.randomRPM.Location = new System.Drawing.Point(114, 54);
             this.randomRPM.Name = "randomRPM";
             this.randomRPM.Size = new System.Drawing.Size(18, 17);
             this.randomRPM.TabIndex = 8;
             this.randomRPM.UseVisualStyleBackColor = true;
+            this.randomRPM.CheckedChanged += new System.EventHandler(this.randomRPM_CheckedChanged);
             // 
             // labelRPM
             // 
@@ -188,6 +200,7 @@ namespace ErgometerSimulator
             // 
             // setSpeed
             // 
+            this.setSpeed.Enabled = false;
             this.setSpeed.Location = new System.Drawing.Point(363, 78);
             this.setSpeed.Name = "setSpeed";
             this.setSpeed.Size = new System.Drawing.Size(75, 23);
@@ -198,6 +211,7 @@ namespace ErgometerSimulator
             // 
             // text2Speed
             // 
+            this.text2Speed.Enabled = false;
             this.text2Speed.Location = new System.Drawing.Point(257, 78);
             this.text2Speed.Name = "text2Speed";
             this.text2Speed.Size = new System.Drawing.Size(100, 22);
@@ -205,6 +219,7 @@ namespace ErgometerSimulator
             // 
             // text1Speed
             // 
+            this.text1Speed.Enabled = false;
             this.text1Speed.Location = new System.Drawing.Point(151, 78);
             this.text1Speed.Name = "text1Speed";
             this.text1Speed.Size = new System.Drawing.Size(100, 22);
@@ -213,11 +228,13 @@ namespace ErgometerSimulator
             // randomSpeed
             // 
             this.randomSpeed.AutoSize = true;
+            this.randomSpeed.Enabled = false;
             this.randomSpeed.Location = new System.Drawing.Point(114, 82);
             this.randomSpeed.Name = "randomSpeed";
             this.randomSpeed.Size = new System.Drawing.Size(18, 17);
             this.randomSpeed.TabIndex = 13;
             this.randomSpeed.UseVisualStyleBackColor = true;
+            this.randomSpeed.CheckedChanged += new System.EventHandler(this.randomSpeed_CheckedChanged);
             // 
             // labelSpeed
             // 
@@ -230,6 +247,7 @@ namespace ErgometerSimulator
             // 
             // setDistance
             // 
+            this.setDistance.Enabled = false;
             this.setDistance.Location = new System.Drawing.Point(363, 108);
             this.setDistance.Name = "setDistance";
             this.setDistance.Size = new System.Drawing.Size(75, 23);
@@ -240,6 +258,7 @@ namespace ErgometerSimulator
             // 
             // text2Distance
             // 
+            this.text2Distance.Enabled = false;
             this.text2Distance.Location = new System.Drawing.Point(257, 108);
             this.text2Distance.Name = "text2Distance";
             this.text2Distance.Size = new System.Drawing.Size(100, 22);
@@ -247,6 +266,7 @@ namespace ErgometerSimulator
             // 
             // text1Distance
             // 
+            this.text1Distance.Enabled = false;
             this.text1Distance.Location = new System.Drawing.Point(151, 108);
             this.text1Distance.Name = "text1Distance";
             this.text1Distance.Size = new System.Drawing.Size(100, 22);
@@ -255,11 +275,13 @@ namespace ErgometerSimulator
             // randomDistance
             // 
             this.randomDistance.AutoSize = true;
+            this.randomDistance.Enabled = false;
             this.randomDistance.Location = new System.Drawing.Point(114, 112);
             this.randomDistance.Name = "randomDistance";
             this.randomDistance.Size = new System.Drawing.Size(18, 17);
             this.randomDistance.TabIndex = 18;
             this.randomDistance.UseVisualStyleBackColor = true;
+            this.randomDistance.CheckedChanged += new System.EventHandler(this.randomDistance_CheckedChanged);
             // 
             // labelDistance
             // 
@@ -272,6 +294,7 @@ namespace ErgometerSimulator
             // 
             // setPower
             // 
+            this.setPower.Enabled = false;
             this.setPower.Location = new System.Drawing.Point(363, 137);
             this.setPower.Name = "setPower";
             this.setPower.Size = new System.Drawing.Size(75, 23);
@@ -282,6 +305,7 @@ namespace ErgometerSimulator
             // 
             // text2Power
             // 
+            this.text2Power.Enabled = false;
             this.text2Power.Location = new System.Drawing.Point(257, 137);
             this.text2Power.Name = "text2Power";
             this.text2Power.Size = new System.Drawing.Size(100, 22);
@@ -289,6 +313,7 @@ namespace ErgometerSimulator
             // 
             // text1Power
             // 
+            this.text1Power.Enabled = false;
             this.text1Power.Location = new System.Drawing.Point(151, 137);
             this.text1Power.Name = "text1Power";
             this.text1Power.Size = new System.Drawing.Size(100, 22);
@@ -297,11 +322,13 @@ namespace ErgometerSimulator
             // randomPower
             // 
             this.randomPower.AutoSize = true;
+            this.randomPower.Enabled = false;
             this.randomPower.Location = new System.Drawing.Point(114, 141);
             this.randomPower.Name = "randomPower";
             this.randomPower.Size = new System.Drawing.Size(18, 17);
             this.randomPower.TabIndex = 23;
             this.randomPower.UseVisualStyleBackColor = true;
+            this.randomPower.CheckedChanged += new System.EventHandler(this.randomPower_CheckedChanged);
             // 
             // labelPower
             // 
@@ -314,6 +341,7 @@ namespace ErgometerSimulator
             // 
             // setEnergy
             // 
+            this.setEnergy.Enabled = false;
             this.setEnergy.Location = new System.Drawing.Point(363, 166);
             this.setEnergy.Name = "setEnergy";
             this.setEnergy.Size = new System.Drawing.Size(75, 23);
@@ -324,6 +352,7 @@ namespace ErgometerSimulator
             // 
             // text2Energy
             // 
+            this.text2Energy.Enabled = false;
             this.text2Energy.Location = new System.Drawing.Point(257, 166);
             this.text2Energy.Name = "text2Energy";
             this.text2Energy.Size = new System.Drawing.Size(100, 22);
@@ -331,6 +360,7 @@ namespace ErgometerSimulator
             // 
             // text1Energy
             // 
+            this.text1Energy.Enabled = false;
             this.text1Energy.Location = new System.Drawing.Point(151, 166);
             this.text1Energy.Name = "text1Energy";
             this.text1Energy.Size = new System.Drawing.Size(100, 22);
@@ -339,11 +369,13 @@ namespace ErgometerSimulator
             // randomEnergy
             // 
             this.randomEnergy.AutoSize = true;
+            this.randomEnergy.Enabled = false;
             this.randomEnergy.Location = new System.Drawing.Point(114, 170);
             this.randomEnergy.Name = "randomEnergy";
             this.randomEnergy.Size = new System.Drawing.Size(18, 17);
             this.randomEnergy.TabIndex = 28;
             this.randomEnergy.UseVisualStyleBackColor = true;
+            this.randomEnergy.CheckedChanged += new System.EventHandler(this.randomEnergy_CheckedChanged);
             // 
             // labelEnergy
             // 
@@ -356,6 +388,7 @@ namespace ErgometerSimulator
             // 
             // setActualPower
             // 
+            this.setActualPower.Enabled = false;
             this.setActualPower.Location = new System.Drawing.Point(363, 196);
             this.setActualPower.Name = "setActualPower";
             this.setActualPower.Size = new System.Drawing.Size(75, 23);
@@ -366,6 +399,7 @@ namespace ErgometerSimulator
             // 
             // text2ActualPower
             // 
+            this.text2ActualPower.Enabled = false;
             this.text2ActualPower.Location = new System.Drawing.Point(257, 196);
             this.text2ActualPower.Name = "text2ActualPower";
             this.text2ActualPower.Size = new System.Drawing.Size(100, 22);
@@ -373,6 +407,7 @@ namespace ErgometerSimulator
             // 
             // text1ActualPower
             // 
+            this.text1ActualPower.Enabled = false;
             this.text1ActualPower.Location = new System.Drawing.Point(151, 196);
             this.text1ActualPower.Name = "text1ActualPower";
             this.text1ActualPower.Size = new System.Drawing.Size(100, 22);
@@ -381,11 +416,13 @@ namespace ErgometerSimulator
             // randomActualPower
             // 
             this.randomActualPower.AutoSize = true;
+            this.randomActualPower.Enabled = false;
             this.randomActualPower.Location = new System.Drawing.Point(114, 200);
             this.randomActualPower.Name = "randomActualPower";
             this.randomActualPower.Size = new System.Drawing.Size(18, 17);
             this.randomActualPower.TabIndex = 33;
             this.randomActualPower.UseVisualStyleBackColor = true;
+            this.randomActualPower.CheckedChanged += new System.EventHandler(this.randomActualPower_CheckedChanged);
             // 
             // labelActualPower
             // 
@@ -398,15 +435,18 @@ namespace ErgometerSimulator
             // 
             // setTime
             // 
+            this.setTime.Enabled = false;
             this.setTime.Location = new System.Drawing.Point(363, 262);
             this.setTime.Name = "setTime";
             this.setTime.Size = new System.Drawing.Size(75, 23);
             this.setTime.TabIndex = 41;
             this.setTime.Text = "Set";
             this.setTime.UseVisualStyleBackColor = true;
+            this.setTime.Click += new System.EventHandler(this.setTime_Click);
             // 
             // text1Time
             // 
+            this.text1Time.Enabled = false;
             this.text1Time.Location = new System.Drawing.Point(151, 262);
             this.text1Time.Name = "text1Time";
             this.text1Time.Size = new System.Drawing.Size(101, 22);
@@ -415,6 +455,7 @@ namespace ErgometerSimulator
             // countTime
             // 
             this.countTime.AutoSize = true;
+            this.countTime.Enabled = false;
             this.countTime.Location = new System.Drawing.Point(77, 263);
             this.countTime.Name = "countTime";
             this.countTime.Size = new System.Drawing.Size(65, 21);

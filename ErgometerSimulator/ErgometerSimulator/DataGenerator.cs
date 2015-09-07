@@ -19,6 +19,8 @@ namespace ErgometerSimulator
         public ValueSetting ActualPower { get; set; }
         public ValueSetting Time { get; set; }
 
+        private double lastTime;
+
         public DataGenerator()
         {
             rand = new Random();
@@ -30,6 +32,8 @@ namespace ErgometerSimulator
             Energy = new ValueSetting(false, 0, 0);
             ActualPower = new ValueSetting(false, 0, 0);
             Time = new ValueSetting(false, 0, 0);
+
+            lastTime = (DateTime.Now - DateTime.Parse("1/1/1870 0:0:0")).TotalMilliseconds;
         }
 
         
@@ -100,13 +104,24 @@ namespace ErgometerSimulator
                 ActualPower.currentvalue = ActualPower.value1;
             }
             //Time
-            if (Time.random) // false = up; true = down;
+            if ((DateTime.Now - DateTime.Parse("1/1/1870 0:0:0")).TotalMilliseconds - lastTime > 1000)
             {
-                Time.currentvalue = Time.value1 - 1;
-            }
-            else
-            {
-                Time.currentvalue = Time.value1 + 1;
+                if (Time.random) // false = up; true = down;
+                {
+                    if (Time.value1 - 1 <= 0)
+                        Time.value1 = 0;
+                    else
+                        Time.value1 = Time.value1 - 1;
+
+                    Time.currentvalue = Time.value1;
+                }
+                else
+                {
+                    Time.value1 = Time.value1 + 1;
+                    Time.currentvalue = Time.value1;
+                }
+
+                lastTime = (DateTime.Now - DateTime.Parse("1/1/1870 0:0:0")).TotalMilliseconds;
             }
         }
     }

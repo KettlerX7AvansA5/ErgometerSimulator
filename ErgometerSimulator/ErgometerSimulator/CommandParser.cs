@@ -33,7 +33,7 @@ namespace ErgometerSimulator
                     response += dg.Distance.currentvalue + "\t"; //Distance
                     response += dg.Power.currentvalue  + "\t"; //Power
                     response += dg.Energy.currentvalue    + "\t"; //Energy
-                    response += dg.Time.currentvalue /60   + ":" + dg.Time.currentvalue % 60 + "\t"; //Time
+                    response += (dg.Time.currentvalue/60)   + ":" + (dg.Time.currentvalue%60) + "\t"; //Time
                     response += dg.ActualPower.currentvalue;         //ActualPower
                     break;
                 default:
