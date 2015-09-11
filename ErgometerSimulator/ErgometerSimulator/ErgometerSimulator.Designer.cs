@@ -96,9 +96,7 @@ namespace ErgometerSimulator
             // ComPortBox
             // 
             this.ComPortBox.FormattingEnabled = true;
-            this.ComPortBox.Items.AddRange(new object[] {
-            "COM8",
-            "COM9"});
+            this.ComPortBox.Items.AddRange(SerialPort.GetPortNames());
             this.ComPortBox.Location = new System.Drawing.Point(15, 308);
             this.ComPortBox.Name = "ComPortBox";
             this.ComPortBox.Size = new System.Drawing.Size(121, 24);
