@@ -36,7 +36,19 @@ namespace ErgometerSimulator
             lastTime = (DateTime.Now - DateTime.Parse("1/1/1870 0:0:0")).TotalMilliseconds;
         }
 
-        
+        public void Reset()
+        {
+            HeartBeat = new ValueSetting(false, 0, 0);
+            RPM = new ValueSetting(false, 0, 0);
+            Speed = new ValueSetting(false, 0, 0);
+            Distance = new ValueSetting(false, 0, 0);
+            Power = new ValueSetting(false, 0, 0);
+            Energy = new ValueSetting(false, 0, 0);
+            ActualPower = new ValueSetting(false, 0, 0);
+            Time = new ValueSetting(false, 0, 0);
+
+            lastTime = (DateTime.Now - DateTime.Parse("1/1/1870 0:0:0")).TotalMilliseconds;
+        }
 
         public void Update()
         {

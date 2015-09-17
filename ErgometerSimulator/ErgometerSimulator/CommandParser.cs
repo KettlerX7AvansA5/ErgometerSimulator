@@ -25,6 +25,7 @@ namespace ErgometerSimulator
                 case "CM":
                 case "RS":
                     response = "ACK";
+                    dg.Reset();
                     break;
                 case "ST":
                     response += dg.HeartBeat.currentvalue  + "\t"; //Heartbeat
@@ -42,7 +43,7 @@ namespace ErgometerSimulator
             if (input.StartsWith("PT"))
             {
                 dg.Time.currentvalue = int.Parse(input.Substring(3, 2)) * 60 + int.Parse(input.Substring(5, 2));
-                dg.Time.value1 = int.Parse(input.Substring(3,2)) * 60 + int.Parse(input.Substring(5,2));
+                dg.Time = new ValueSetting(true, int.Parse(input.Substring(3, 2)) * 60 + int.Parse(input.Substring(5, 2)), 0);
                 Console.WriteLine(dg.Time.currentvalue);
             }
             else if (input.StartsWith("PD"))
