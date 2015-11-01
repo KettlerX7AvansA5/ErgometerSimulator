@@ -58,8 +58,38 @@ namespace ErgometerSimulator
 
         private void updateTimer_Tick(object sender, EventArgs e)
         {
-            labelCurrentTime.Text = dg.Time.currentvalue / 60 + ":" + dg.Time.currentvalue % 60;
             dg.Update();
+
+            labelCurrentTime.Text = dg.Time.currentvalue / 60 + ":" + dg.Time.currentvalue % 60;
+
+            heartbeatMinLbl.Text = dg.HeartBeat.value1 + "";
+            heartbeatMaxLbl.Text = dg.HeartBeat.value2 + "";
+            heartbeatCurLbl.Text = dg.HeartBeat.currentvalue + "";
+
+            rpmMinLbl.Text = dg.RPM.value1 + "";
+            rpmMaxLbl.Text = dg.RPM.value2 + "";
+            rpmCurLbl.Text = dg.RPM.currentvalue + "";
+
+            speedMinLbl.Text = dg.Speed.value1 + "";
+            speedMaxLbl.Text = dg.Speed.value2 + "";
+            speedCurLbl.Text = dg.Speed.currentvalue + "";
+
+            distanceMinLbl.Text = dg.Distance.value1 + "";
+            distanceMaxLbl.Text = dg.Distance.value2 + "";
+            distanceCurLbl.Text = dg.Distance.currentvalue + "";
+
+            powerMinLbl.Text = dg.Power.value1 + "";
+            powerMaxLbl.Text = dg.Power.value2 + "";
+            powerCurLbl.Text = dg.Power.currentvalue + "";
+
+            energyMinLbl.Text = dg.Energy.value1 + "";
+            energyMaxLbl.Text = dg.Energy.value2 + "";
+            energyCurLbl.Text = dg.Energy.currentvalue + "";
+
+            actpowerMinLbl.Text = dg.ActualPower.value1 + "";
+            actpowerMaxLbl.Text = dg.ActualPower.value2 + "";
+            actpowerCurLbl.Text = dg.ActualPower.currentvalue + "";
+
         }
 
         private void setHeartBeat_Click(object sender, EventArgs e)
