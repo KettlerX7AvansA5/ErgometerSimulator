@@ -8,7 +8,6 @@ namespace ErgometerSimulator
 {
     class CommandParser
     {
-        private Random rand = new Random();
         private DataGenerator dg;
 
         public CommandParser(DataGenerator dg)
@@ -23,6 +22,7 @@ namespace ErgometerSimulator
             switch(input)
             {
                 case "CM":
+                    break;
                 case "RS":
                     response = "ACK";
                     dg.Reset();
